@@ -1,0 +1,134 @@
+/*
+ * Charte Gestion Immobilière — palette « Bleu confiance et or » (CHARTE-GRAPHIQUE-ADMIN.md).
+ * Importer une fois, avant tout autre style. N'utiliser que les variables --gi-*.
+ * Mode sombre : préférence système, ou forcé par <html data-theme="dark" | "light">.
+ */
+
+:root {
+  --gi-primaire: #1D4E89;
+  --gi-primaire-survol: #173F70;
+  --gi-primaire-teinte: #E8F0FA;
+  --gi-sur-primaire: #FFFFFF;
+  --gi-secondaire: #F4A93B;
+  --gi-secondaire-survol: #E0952A;
+  --gi-secondaire-teinte: #FEF3E2;
+  --gi-sur-secondaire: #3A2604;
+
+  --gi-fond: #F7F8FA;
+  --gi-surface: #FFFFFF;
+  --gi-surface-alt: #F1F3F6;
+  --gi-bordure: #E2E6EC;
+  --gi-bordure-forte: #CBD2DB;
+  --gi-bordure-champ: #848E9D;
+  --gi-texte: #1F2937;
+  --gi-texte-secondaire: #6B7280;
+  --gi-texte-discret: #9CA3AF;
+
+  --gi-succes: #18763A;
+  --gi-succes-fond: #E6F4EA;
+  --gi-avertissement: #B45309;
+  --gi-avertissement-fond: #FFF4E5;
+  --gi-danger: #C62828;
+  --gi-danger-fond: #FDECEC;
+  --gi-info: #1D4E89;
+  --gi-info-fond: #E8F0FA;
+  --gi-neutre: #4B5563;
+  --gi-neutre-fond: #F1F3F6;
+
+  --gi-police: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --gi-taille-legende: 12px;
+  --gi-taille-petit: 14px;
+  --gi-taille-corps: 16px;
+  --gi-taille-sous-titre: 18px;
+  --gi-taille-titre: 22px;
+  --gi-taille-grand-titre: 28px;
+  --gi-taille-chiffre-cle: 32px;
+
+  --gi-espace-xs: 4px;
+  --gi-espace-sm: 8px;
+  --gi-espace-md: 12px;
+  --gi-espace-lg: 16px;
+  --gi-espace-xl: 24px;
+  --gi-espace-xxl: 32px;
+  --gi-rayon-petit: 6px;
+  --gi-rayon: 8px;
+  --gi-rayon-carte: 12px;
+  --gi-rayon-feuille: 16px;
+  --gi-rayon-pilule: 999px;
+
+  --gi-focus: 0 0 0 3px rgba(29, 78, 137, 0.35);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --gi-primaire: #6FA8E8;
+    --gi-primaire-survol: #8BBBEE;
+    --gi-primaire-teinte: #17304F;
+    --gi-sur-primaire: #0B2440;
+    --gi-secondaire-survol: #F7BC63;
+    --gi-secondaire-teinte: #3A2A12;
+    --gi-fond: #0E1621;
+    --gi-surface: #16202D;
+    --gi-surface-alt: #1E2A3A;
+    --gi-bordure: #2A3747;
+    --gi-bordure-forte: #3A4A5E;
+    --gi-bordure-champ: #66778C;
+    --gi-texte: #E6EAF0;
+    --gi-texte-secondaire: #A3AEBD;
+    --gi-texte-discret: #6B7686;
+    --gi-succes: #4CC27A;
+    --gi-succes-fond: #133222;
+    --gi-avertissement: #FB923C;
+    --gi-avertissement-fond: #3A2412;
+    --gi-danger: #F87171;
+    --gi-danger-fond: #3B1717;
+    --gi-info: #6FA8E8;
+    --gi-info-fond: #17304F;
+    --gi-neutre: #A3AEBD;
+    --gi-neutre-fond: #1E2A3A;
+    --gi-focus: 0 0 0 3px rgba(111, 168, 232, 0.4);
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --gi-primaire: #6FA8E8;
+  --gi-primaire-survol: #8BBBEE;
+  --gi-primaire-teinte: #17304F;
+  --gi-sur-primaire: #0B2440;
+  --gi-secondaire-survol: #F7BC63;
+  --gi-secondaire-teinte: #3A2A12;
+  --gi-fond: #0E1621;
+  --gi-surface: #16202D;
+  --gi-surface-alt: #1E2A3A;
+  --gi-bordure: #2A3747;
+  --gi-bordure-forte: #3A4A5E;
+  --gi-bordure-champ: #66778C;
+  --gi-texte: #E6EAF0;
+  --gi-texte-secondaire: #A3AEBD;
+  --gi-texte-discret: #6B7686;
+  --gi-succes: #4CC27A;
+  --gi-succes-fond: #133222;
+  --gi-avertissement: #FB923C;
+  --gi-avertissement-fond: #3A2412;
+  --gi-danger: #F87171;
+  --gi-danger-fond: #3B1717;
+  --gi-info: #6FA8E8;
+  --gi-info-fond: #17304F;
+  --gi-neutre: #A3AEBD;
+  --gi-neutre-fond: #1E2A3A;
+  --gi-focus: 0 0 0 3px rgba(111, 168, 232, 0.4);
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  background: var(--gi-fond);
+  color: var(--gi-texte);
+  font-family: var(--gi-police);
+  font-size: var(--gi-taille-corps);
+  line-height: 1.5;
+}
+
+.gi-montant { font-variant-numeric: tabular-nums; white-space: nowrap; }

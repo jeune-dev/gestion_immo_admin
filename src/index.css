@@ -1,0 +1,59 @@
+@import "tailwindcss";
+@import "./theme/theme.css";
+
+@theme inline {
+  --color-primaire: var(--gi-primaire);
+  --color-primaire-survol: var(--gi-primaire-survol);
+  --color-primaire-teinte: var(--gi-primaire-teinte);
+  --color-sur-primaire: var(--gi-sur-primaire);
+  --color-secondaire: var(--gi-secondaire);
+  --color-secondaire-survol: var(--gi-secondaire-survol);
+  --color-secondaire-teinte: var(--gi-secondaire-teinte);
+  --color-sur-secondaire: var(--gi-sur-secondaire);
+  --color-fond: var(--gi-fond);
+  --color-surface: var(--gi-surface);
+  --color-surface-alt: var(--gi-surface-alt);
+  --color-bordure: var(--gi-bordure);
+  --color-bordure-forte: var(--gi-bordure-forte);
+  --color-bordure-champ: var(--gi-bordure-champ);
+  --color-texte: var(--gi-texte);
+  --color-texte-secondaire: var(--gi-texte-secondaire);
+  --color-texte-discret: var(--gi-texte-discret);
+  --color-succes: var(--gi-succes);
+  --color-succes-fond: var(--gi-succes-fond);
+  --color-avertissement: var(--gi-avertissement);
+  --color-avertissement-fond: var(--gi-avertissement-fond);
+  --color-danger: var(--gi-danger);
+  --color-danger-fond: var(--gi-danger-fond);
+  --color-info: var(--gi-info);
+  --color-info-fond: var(--gi-info-fond);
+  --color-neutre: var(--gi-neutre);
+  --color-neutre-fond: var(--gi-neutre-fond);
+  --font-sans: var(--gi-police);
+  --text-legende: 12px;
+  --text-petit: 14px;
+  --text-corps: 16px;
+  --text-sous-titre: 18px;
+  --text-titre: 22px;
+  --text-grand-titre: 28px;
+  --text-chiffre-cle: 32px;
+  --radius-petit: 6px;
+  --radius-pilule: 999px;
+  --radius-carte: 12px;
+  --radius-feuille: 16px;
+  --shadow-focus: var(--gi-focus);
+  --shadow-carte: 0 1px 2px rgb(16 24 40 / 0.04), 0 1px 3px rgb(16 24 40 / 0.06);
+}
+
+html, body, #root { height: 100%; }
+* { scrollbar-width: thin; }
+:focus-visible { outline: none; box-shadow: var(--gi-focus); }
+
+@keyframes gi-skeleton { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+.gi-skeleton {
+  background: linear-gradient(90deg, var(--gi-surface-alt) 25%, var(--gi-bordure) 50%, var(--gi-surface-alt) 75%);
+  background-size: 200% 100%;
+  animation: gi-skeleton 1.6s ease-in-out infinite;
+  border-radius: var(--gi-rayon);
+}
+@media (prefers-reduced-motion: reduce) { .gi-skeleton { animation: none; } }
