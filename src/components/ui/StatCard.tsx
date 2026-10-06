@@ -3,8 +3,8 @@ import type { ReactNode } from 'react';
 import { Card } from './Card';
 import { Skeleton } from './States';
 
-export function StatCard({ label, value, hint, icon: Icon, loading, accent }: {
-  label: string; value: ReactNode; hint?: ReactNode; icon: LucideIcon; loading?: boolean; accent?: boolean;
+export function StatCard({ label, value, unit, hint, icon: Icon, loading, accent }: {
+  label: string; value: ReactNode; unit?: string; hint?: ReactNode; icon: LucideIcon; loading?: boolean; accent?: boolean;
 }) {
   return (
     <Card className="p-5">
@@ -14,7 +14,10 @@ export function StatCard({ label, value, hint, icon: Icon, loading, accent }: {
           <Icon className="size-5" aria-hidden />
         </span>
       </div>
-      {loading ? <Skeleton className="mt-3 h-8 w-24" /> : <p className="gi-montant mt-2 text-chiffre-cle font-semibold leading-tight text-texte">{value}</p>}
+      {loading ? <Skeleton className="mt-3 h-8 w-24" /> : <p className="gi-montant mt-2 flex flex-wrap items-baseline gap-x-1.5 break-words font-semibold leading-tight text-texte">
+          <span className="text-chiffre-cle">{value}</span>
+          {unit && <span className="text-petit font-medium text-texte-secondaire">{unit}</span>}
+        </p>}
       {hint && !loading && <p className="mt-1 text-legende text-texte-secondaire">{hint}</p>}
     </Card>
   );

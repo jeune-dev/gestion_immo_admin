@@ -96,10 +96,10 @@ export default function DashboardPage() {
           <StatCard loading={dash.isLoading} icon={Users} label="Locataires" value={nombre(d?.tenants)} />
           <StatCard loading={dash.isLoading} icon={Building2} label="Immeubles" value={nombre(d?.buildings)} />
           <StatCard loading={dash.isLoading} icon={Home} label="Appartements" value={nombre(d?.apartments.total)} hint={d && `${nombre(d.apartments.occupied)} occupés · ${nombre(d.apartments.available)} disponibles · ${d.apartments.occupancy_rate} %`} />
-          <StatCard loading={dash.isLoading} icon={Banknote} label="Loyers dus" value={fcfa(d?.rent.due)} />
-          <StatCard loading={dash.isLoading} icon={Wallet} label="Loyers encaissés" value={fcfa(d?.rent.collected)} hint={collectedPct != null ? `${collectedPct} % des loyers dus` : undefined} />
-          <StatCard loading={dash.isLoading} icon={DoorOpen} label="Paiements du mois" value={fcfa(d?.payments.amount)} hint={d && `${nombre(d.payments.count)} paiement(s)`} />
-          <StatCard loading={dash.isLoading} icon={TrendingUp} accent label="Revenu mensuel récurrent" value={fcfa(d?.subscriptions.mrr)} hint="Abonnements actifs" />
+          <StatCard loading={dash.isLoading} icon={Banknote} label="Loyers dus" value={nombre(d?.rent.due)} unit="FCFA" />
+          <StatCard loading={dash.isLoading} icon={Wallet} label="Loyers encaissés" value={nombre(d?.rent.collected)} unit="FCFA" hint={collectedPct != null ? `${collectedPct} % des loyers dus` : undefined} />
+          <StatCard loading={dash.isLoading} icon={DoorOpen} label="Paiements du mois" value={nombre(d?.payments.amount)} unit="FCFA" hint={d && `${nombre(d.payments.count)} paiement(s)`} />
+          <StatCard loading={dash.isLoading} icon={TrendingUp} accent label="Revenu mensuel récurrent" value={nombre(d?.subscriptions.mrr)} unit="FCFA" hint="Abonnements actifs" />
         </section>
       )}
 
